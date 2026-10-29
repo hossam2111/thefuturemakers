@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SmartImage } from '../components/SmartImage';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -24,6 +25,16 @@ export const Contact: React.FC = () => {
     <div className="flex flex-col">
       {/* Hero */}
       <section className="bg-primary text-white py-16 lg:py-20 relative overflow-hidden">
+        <SmartImage
+          decorative
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+          src="/images/handshake.jpg"
+          width={800}
+          height={1200}
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/85 to-primary/95" aria-hidden="true" />
         <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <span className="text-sm font-bold bg-white/10 px-4 py-1.5 rounded-full inline-block mb-4 border border-white/20">
@@ -44,7 +55,7 @@ export const Contact: React.FC = () => {
           
           {/* Contact Details Column */}
           <div className="space-y-6">
-            <div className="bg-white rounded-3xl p-8 border border-outline-variant/30 shadow-sm space-y-6">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-outline-variant/30 shadow-sm space-y-6">
               <h2 className="text-2xl font-bold font-headline text-on-surface pb-3 border-b border-outline-variant/20">
                 معلومات التواصل
               </h2>
@@ -98,7 +109,7 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Quick WhatsApp Box */}
-            <div className="bg-gradient-to-br from-primary to-secondary p-8 rounded-3xl text-white shadow-lg">
+            <div className="bg-gradient-to-br from-primary to-secondary p-6 sm:p-8 rounded-3xl text-white shadow-lg">
               <h3 className="font-bold font-headline text-xl mb-2">تفضل المحادثة المباشرة؟</h3>
               <p className="text-white/80 text-sm mb-6 leading-relaxed">
                 يمكنك التحدث مع مسؤولي خدمة الجمهور بالفرع عبر واتساب مباشرة للرد على الاستفسارات العاجلة.
@@ -117,7 +128,7 @@ export const Contact: React.FC = () => {
 
           {/* Contact Form Column (Span 2) */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-3xl p-8 sm:p-12 border border-outline-variant/30 shadow-xl">
+            <div className="bg-white rounded-3xl p-6 sm:p-12 border border-outline-variant/30 shadow-xl">
               {submitted ? (
                 <div className="text-center py-12 space-y-4 animate-fade-in">
                   <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { SmartImage } from '../components/SmartImage';
 
 export const RequestAid: React.FC = () => {
   const [step, setStep] = useState<number>(1);
@@ -71,6 +72,18 @@ export const RequestAid: React.FC = () => {
             <span className="material-symbols-outlined text-sm rtl:rotate-180">arrow_forward</span>
             العودة للصفحة الرئيسية
           </Link>
+          <div className="relative mb-6 h-28 sm:h-36 overflow-hidden rounded-3xl border border-outline-variant/30 shadow-sm">
+            <SmartImage
+              alt="بيوت ريفية بالطوب اللبن تحت ظل شجرة في قرية مصرية"
+              className="h-full w-full object-cover"
+              src="/images/village-courtyard.jpg"
+              width={1200}
+              height={800}
+              loading="eager"
+              fallbackIcon="volunteer_activism"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent" aria-hidden="true" />
+          </div>
           <h1 className="text-3xl md:text-4xl font-extrabold font-headline text-primary mb-3">
             طلب مساعدة جديد (محافظة الفيوم)
           </h1>
@@ -122,7 +135,7 @@ export const RequestAid: React.FC = () => {
         )}
 
         {/* Step Container Card */}
-        <div className="bg-white rounded-3xl p-8 sm:p-10 border border-outline-variant/30 shadow-xl">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-outline-variant/30 shadow-xl">
           
           {/* SUCCESS SCREEN */}
           {submittedRequestId ? (
@@ -333,7 +346,7 @@ export const RequestAid: React.FC = () => {
                 <p className="text-xs text-on-surface-variant mt-1">يجب ألا يقل الوصف عن 10 أحرف.</p>
               </div>
 
-              <div className="pt-4 flex justify-between items-center">
+              <div className="pt-4 flex flex-wrap justify-between items-center gap-3">
                 <button
                   type="button"
                   onClick={() => setStep(1)}
@@ -401,7 +414,7 @@ export const RequestAid: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-4 flex justify-between items-center">
+              <div className="pt-4 flex flex-wrap justify-between items-center gap-3">
                 <button
                   type="button"
                   onClick={() => setStep(2)}

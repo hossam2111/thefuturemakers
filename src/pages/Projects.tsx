@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SmartImage } from '../components/SmartImage';
 
 export const Projects: React.FC = () => {
   const campaigns = [
@@ -8,6 +9,8 @@ export const Projects: React.FC = () => {
       title: 'بطانية الشتاء 2026',
       badge: 'موسمي',
       icon: 'ac_unit',
+      image: '/images/winter-warmth.jpg',
+      imageAlt: 'طفلان يرتديان ملابس شتوية دافئة',
       desc: 'توفير بطاطين وملابس شتوية للأسر الأكثر احتياجاً في قرى ومراكز محافظة الفيوم لمواجهة البرد القارس.',
       percent: 75,
       target: '500,000 EGP',
@@ -18,6 +21,8 @@ export const Projects: React.FC = () => {
       title: 'كفالة الأيتام والأسر المعيلة',
       badge: 'رعاية اجتماعية',
       icon: 'family_restroom',
+      image: '/images/children-smiling.jpg',
+      imageAlt: 'أطفال يبتسمون بسعادة',
       desc: 'دعم شهري ثابت لتغطية نفقات التعليم والغذاء والدواء لعدد 250 أسرة معيلة وأيتام بقرى الفيوم.',
       percent: 68,
       target: '250,000 EGP',
@@ -28,6 +33,8 @@ export const Projects: React.FC = () => {
       title: 'قوافل الرعاية الطبية',
       badge: 'صحة',
       icon: 'medical_services',
+      image: '/images/medical-doctor-boy.jpg',
+      imageAlt: 'طبيب يفحص طفلاً بالسماعة الطبية بحضور والدته',
       desc: 'تسيير قوافل طبية دورية للقرى النائية وتوفير كشوفات وصيدلية مجانية وتحويلات للعمليات الجراحية العاجلة.',
       percent: 94,
       target: '180,000 EGP',
@@ -38,21 +45,29 @@ export const Projects: React.FC = () => {
   const mainPrograms = [
     {
       icon: 'storefront',
+      image: '/images/shop-owner-woman.jpg',
+      imageAlt: 'سيدة تدير متجراً صغيراً خاصاً بها',
       title: 'التمكين الاقتصادي (مشروعات صغيرة)',
       desc: 'نستبدل المساعدة المؤقتة بمصدر دخل دائم للأسرة من خلال تمويل مشاريع تجارية وزراعية صغيرة (أكشاك، ماكينات خياطة، ورش، تربية طيور).',
     },
     {
       icon: 'ecg',
+      image: '/images/medical-equipment.jpg',
+      imageAlt: 'جهاز قياس ضغط الدم على طاولة الكشف',
       title: 'الرعاية الطبية والعمليات',
       desc: 'التكفل بمصاريف العمليات الجراحية الكبرى وتوفير الأجهزة التعويضية وصرف الروشتات الشهرية لأصحاب الأمراض المزمنة في الفيوم.',
     },
     {
       icon: 'kitchen',
+      image: '/images/food-aid-packing.jpg',
+      imageAlt: 'متطوعات يجهزن أكياس المساعدات الغذائية',
       title: 'المساعدات العينية والغذائية',
       desc: 'توزيع كراتين المواد الغذائية واللحوم وتوفير الاحتياجات الأساسية للمنازل (تسقيف، وصلات مياه نظيفة) وتجهيز الفتيات اليتيمات للزواج.',
     },
     {
       icon: 'school',
+      image: '/images/literacy-books.jpg',
+      imageAlt: 'فتيات يحملن الكتب الدراسية',
       title: 'الدعم التعليمي ومحو الأمية',
       desc: 'سداد المصروفات الدراسية للطلبة غير القادرين، وتوفير الشنط والأدوات المدرسية، ورعاية فصول محو الأمية لكبار السن.',
     },
@@ -96,13 +111,17 @@ export const Projects: React.FC = () => {
                 key={camp.id}
                 className="bg-white rounded-3xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col"
               >
-                <div className="bg-primary/5 p-8 flex items-center justify-center relative overflow-hidden">
-                  <span
-                    className="material-symbols-outlined text-[80px] text-primary opacity-20 transform group-hover:scale-110 transition-transform duration-500"
-                    aria-hidden="true"
-                  >
-                    {camp.icon}
-                  </span>
+                <div className="bg-primary/5 h-48 flex items-center justify-center relative overflow-hidden">
+                  <SmartImage
+                    alt={camp.imageAlt}
+                    className="absolute inset-0 h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    src={camp.image}
+                    width={1200}
+                    height={800}
+                    fallbackIcon={camp.icon}
+                    fallbackClassName="bg-primary/5"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" aria-hidden="true" />
                   <div className="absolute top-4 right-4">
                     <span className="bg-white px-3 py-1 rounded-full text-xs font-bold shadow-sm text-primary">
                       {camp.badge}
@@ -173,20 +192,30 @@ export const Projects: React.FC = () => {
             {mainPrograms.map((prog, idx) => (
               <div
                 key={idx}
-                className="flex flex-col sm:flex-row gap-6 p-8 rounded-3xl border border-outline-variant/30 bg-surface-container-lowest hover:border-primary/40 transition-colors shadow-sm"
+                className="flex flex-col rounded-3xl border border-outline-variant/30 bg-surface-container-lowest hover:border-primary/40 transition-colors shadow-sm overflow-hidden"
               >
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 bg-primary/10 text-primary">
-                  <span className="material-symbols-outlined text-3xl" aria-hidden="true">
-                    {prog.icon}
-                  </span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold font-headline mb-3 text-on-surface">
-                    {prog.title}
-                  </h3>
-                  <p className="text-on-surface-variant leading-relaxed text-sm">
-                    {prog.desc}
-                  </p>
+                <SmartImage
+                  alt={prog.imageAlt}
+                  className="h-44 w-full object-cover"
+                  src={prog.image}
+                  width={1200}
+                  height={800}
+                  fallbackIcon={prog.icon}
+                />
+                <div className="flex flex-col sm:flex-row gap-6 p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 bg-primary/10 text-primary">
+                    <span className="material-symbols-outlined text-3xl" aria-hidden="true">
+                      {prog.icon}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold font-headline mb-3 text-on-surface">
+                      {prog.title}
+                    </h3>
+                    <p className="text-on-surface-variant leading-relaxed text-sm">
+                      {prog.desc}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}

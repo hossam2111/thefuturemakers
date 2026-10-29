@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { SmartImage } from '../components/SmartImage';
 
 export const Home: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'membership' | 'request'>('membership');
@@ -81,10 +82,14 @@ export const Home: React.FC = () => {
 
           {/* Hero Visual Card */}
           <div className="relative h-[380px] lg:h-[540px] rounded-3xl overflow-hidden border border-secondary/30 shadow-2xl shadow-primary/20 group">
-            <img
-              alt="متطوعو صناع المستقبل بالفيوم"
+            <SmartImage
+              alt="متطوعون يجهزون المساعدات تحت خيمة ميدانية"
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              src="/hero-life-makers-2026.jpeg"
+              src="/images/hero-volunteers.jpg"
+              width={1000}
+              height={930}
+              loading="eager"
+              fallbackIcon="diversity_3"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-secondary/30 mix-blend-multiply" />
             <div className="absolute bottom-6 right-6 left-6 p-6 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 text-white">
@@ -99,11 +104,11 @@ export const Home: React.FC = () => {
 
       {/* Verification Widget */}
       <section className="relative z-20 max-w-4xl mx-auto px-6 -mt-10 mb-16 w-full">
-        <div className="bg-white rounded-3xl p-8 shadow-[0px_20px_48px_-12px_rgba(0,40,38,0.12)] border border-outline-variant/30 flex flex-col gap-6">
-          <div className="flex gap-4 border-b border-outline-variant/30 pb-4">
+        <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-[0px_20px_48px_-12px_rgba(0,40,38,0.12)] border border-outline-variant/30 flex flex-col gap-6">
+          <div className="flex gap-3 sm:gap-4 border-b border-outline-variant/30 pb-4">
             <button
               onClick={() => { setActiveTab('membership'); setVerificationResult(null); }}
-              className={`font-bold text-lg pb-4 -mb-[17px] transition-colors border-b-2 ${
+              className={`font-bold text-sm sm:text-lg whitespace-nowrap pb-4 -mb-[17px] transition-colors border-b-2 ${
                 activeTab === 'membership'
                   ? 'border-primary text-primary'
                   : 'border-transparent text-on-surface-variant hover:text-on-surface'
@@ -113,7 +118,7 @@ export const Home: React.FC = () => {
             </button>
             <button
               onClick={() => { setActiveTab('request'); setVerificationResult(null); }}
-              className={`font-bold text-lg pb-4 -mb-[17px] transition-colors border-b-2 ${
+              className={`font-bold text-sm sm:text-lg whitespace-nowrap pb-4 -mb-[17px] transition-colors border-b-2 ${
                 activeTab === 'request'
                   ? 'border-primary text-primary'
                   : 'border-transparent text-on-surface-variant hover:text-on-surface'
@@ -134,7 +139,7 @@ export const Home: React.FC = () => {
                 value={nationalId}
                 onChange={(e) => setNationalId(e.target.value.replace(/\D/g, ''))}
                 placeholder="أدخل الرقم القومي الخاص بك (14 رقم)"
-                className="w-full bg-surface-container-low border border-outline-variant/40 rounded-xl py-4 pr-12 pl-4 focus:ring-2 focus:ring-primary/20 text-lg font-bold tracking-widest text-left outline-none"
+                className="w-full bg-surface-container-low border border-outline-variant/40 rounded-xl py-4 pr-11 pl-3 sm:pr-12 sm:pl-4 focus:ring-2 focus:ring-primary/20 text-lg font-bold tracking-widest text-left outline-none placeholder:text-xs placeholder:tracking-normal sm:placeholder:text-lg sm:placeholder:tracking-widest"
                 dir="ltr"
               />
             </div>
@@ -210,13 +215,16 @@ export const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Economic Empowerment (Span 2) */}
             <div className="lg:col-span-2 relative rounded-3xl overflow-hidden group min-h-[320px]">
-              <img
-                alt="تمكين اقتصادي"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80"
+              <SmartImage
+                alt="بائع يدير مشروعه الصغير لبيع الفاكهة"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="/images/small-business-vendor.jpg"
+                width={800}
+                height={1200}
+                fallbackIcon="trending_up"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-secondary/40" />
-              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
                 <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center mb-4 text-white">
                   <span className="material-symbols-outlined">trending_up</span>
                 </div>
@@ -228,36 +236,66 @@ export const Home: React.FC = () => {
             </div>
 
             {/* Educational Support */}
-            <div className="bg-white p-8 rounded-3xl border border-outline-variant/30 hover:shadow-xl transition-shadow flex flex-col justify-end min-h-[320px]">
-              <div className="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center mb-auto text-primary">
-                <span className="material-symbols-outlined">school</span>
+            <div className="bg-white rounded-3xl border border-outline-variant/30 hover:shadow-xl transition-shadow flex flex-col min-h-[320px] overflow-hidden">
+              <SmartImage
+                alt="معلمة مع تلاميذ داخل فصل دراسي"
+                className="h-40 w-full object-cover"
+                src="/images/education-classroom.jpg"
+                width={1200}
+                height={801}
+                fallbackIcon="school"
+              />
+              <div className="p-6 sm:p-8 flex flex-col flex-1">
+                <div className="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center -mt-12 sm:-mt-14 mb-auto text-primary ring-4 ring-white">
+                  <span className="material-symbols-outlined">school</span>
+                </div>
+                <h3 className="text-xl font-bold font-headline text-on-surface mb-3 mt-6">دعم تعليمي</h3>
+                <p className="text-on-surface-variant text-sm leading-relaxed">
+                  برامج محو الأمية، وتوفير المستلزمات والشنط المدرسية، وكفالة الطلاب المتفوقين دراسياً في قرى الفيوم.
+                </p>
               </div>
-              <h3 className="text-xl font-bold font-headline text-on-surface mb-3 mt-8">دعم تعليمي</h3>
-              <p className="text-on-surface-variant text-sm leading-relaxed">
-                برامج محو الأمية، وتوفير المستلزمات والشنط المدرسية، وكفالة الطلاب المتفوقين دراسياً في قرى الفيوم.
-              </p>
             </div>
 
             {/* Health Interventions */}
-            <div className="bg-white p-8 rounded-3xl border border-outline-variant/30 hover:shadow-xl transition-shadow flex flex-col justify-end min-h-[320px]">
-              <div className="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-auto text-warning">
-                <span className="material-symbols-outlined">medical_services</span>
+            <div className="bg-white rounded-3xl border border-outline-variant/30 hover:shadow-xl transition-shadow flex flex-col min-h-[320px] overflow-hidden">
+              <SmartImage
+                alt="طبيبة تفحص طفلاً رضيعاً بحضور والدته"
+                className="h-40 w-full object-cover"
+                src="/images/medical-checkup.jpg"
+                width={1200}
+                height={794}
+                fallbackIcon="medical_services"
+              />
+              <div className="p-6 sm:p-8 flex flex-col flex-1">
+                <div className="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center -mt-12 sm:-mt-14 mb-auto text-warning ring-4 ring-white">
+                  <span className="material-symbols-outlined">medical_services</span>
+                </div>
+                <h3 className="text-xl font-bold font-headline text-on-surface mb-3 mt-6">تدخلات صحية</h3>
+                <p className="text-on-surface-variant text-sm leading-relaxed">
+                  قوافل طبية متخصصة في قرى الفيوم، وتوفير الأدوية وإجراء العمليات الجراحية العاجلة للمرضى غير القادرين.
+                </p>
               </div>
-              <h3 className="text-xl font-bold font-headline text-on-surface mb-3 mt-8">تدخلات صحية</h3>
-              <p className="text-on-surface-variant text-sm leading-relaxed">
-                قوافل طبية متخصصة في قرى الفيوم، وتوفير الأدوية وإجراء العمليات الجراحية العاجلة للمرضى غير القادرين.
-              </p>
             </div>
 
             {/* Decent Housing (Span 2) */}
-            <div className="bg-white p-8 rounded-3xl border border-outline-variant/30 hover:shadow-xl transition-shadow flex flex-col justify-end min-h-[300px] lg:col-span-2">
-              <div className="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center mb-auto text-primary">
-                <span className="material-symbols-outlined">home_work</span>
+            <div className="bg-white rounded-3xl border border-outline-variant/30 hover:shadow-xl transition-shadow flex flex-col min-h-[300px] lg:col-span-2 overflow-hidden">
+              <SmartImage
+                alt="فريق من المتطوعين يبني سقف منزل"
+                className="h-40 w-full object-cover"
+                src="/images/housing-construction.jpg"
+                width={1200}
+                height={800}
+                fallbackIcon="home_work"
+              />
+              <div className="p-6 sm:p-8 flex flex-col flex-1">
+                <div className="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center -mt-12 sm:-mt-14 mb-auto text-primary ring-4 ring-white">
+                  <span className="material-symbols-outlined">home_work</span>
+                </div>
+                <h3 className="text-xl font-bold font-headline text-on-surface mb-3 mt-6">سكن كريم</h3>
+                <p className="text-on-surface-variant text-sm leading-relaxed max-w-sm">
+                  ترميم المنازل وتوفير أسقف آمنة ووصلات مياه نظيفة وكهرباء للأسر الأكثر احتياجاً في مراكز الفيوم.
+                </p>
               </div>
-              <h3 className="text-xl font-bold font-headline text-on-surface mb-3 mt-8">سكن كريم</h3>
-              <p className="text-on-surface-variant text-sm leading-relaxed max-w-sm">
-                ترميم المنازل وتوفير أسقف آمنة ووصلات مياه نظيفة وكهرباء للأسر الأكثر احتياجاً في مراكز الفيوم.
-              </p>
             </div>
           </div>
         </div>
@@ -276,9 +314,15 @@ export const Home: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="rounded-3xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-all">
-              <div className="h-48 bg-primary/10 flex items-center justify-center">
-                <span className="material-symbols-outlined text-6xl text-primary/40">campaign</span>
-              </div>
+              <SmartImage
+                alt="طفلة تتلقى الرعاية الطبية خلال قافلة طبية"
+                className="h-48 w-full object-cover"
+                src="/images/medical-convoy-child.jpg"
+                width={1200}
+                height={801}
+                fallbackIcon="campaign"
+                fallbackClassName="bg-primary/10"
+              />
               <div className="p-6">
                 <span className="text-xs font-bold text-secondary">الفيوم • إطسا</span>
                 <h3 className="text-xl font-bold font-headline text-on-surface mt-2 mb-3">
@@ -291,9 +335,15 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="rounded-3xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-all">
-              <div className="h-48 bg-secondary/10 flex items-center justify-center">
-                <span className="material-symbols-outlined text-6xl text-secondary/40">work</span>
-              </div>
+              <SmartImage
+                alt="سيدة تعمل على ماكينة خياطة في مشروعها الخاص"
+                className="h-48 w-full object-cover"
+                src="/images/sewing-workshop.jpg"
+                width={1200}
+                height={836}
+                fallbackIcon="work"
+                fallbackClassName="bg-secondary/10"
+              />
               <div className="p-6">
                 <span className="text-xs font-bold text-secondary">الفيوم • سنورس</span>
                 <h3 className="text-xl font-bold font-headline text-on-surface mt-2 mb-3">
@@ -306,9 +356,15 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="rounded-3xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-all">
-              <div className="h-48 bg-warning/10 flex items-center justify-center">
-                <span className="material-symbols-outlined text-6xl text-warning/40">groups</span>
-              </div>
+              <SmartImage
+                alt="حلقة تدريبية لفرق التطوع في الهواء الطلق"
+                className="h-48 w-full object-cover"
+                src="/images/volunteer-training.jpg"
+                width={1200}
+                height={708}
+                fallbackIcon="groups"
+                fallbackClassName="bg-warning/10"
+              />
               <div className="p-6">
                 <span className="text-xs font-bold text-secondary">الفيوم • مركز الشباب</span>
                 <h3 className="text-xl font-bold font-headline text-on-surface mt-2 mb-3">
@@ -325,6 +381,14 @@ export const Home: React.FC = () => {
 
       {/* Donation Channels Section */}
       <section id="donate" className="brand-gradient relative overflow-hidden py-20 text-white">
+        <SmartImage
+          decorative
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover opacity-15 mix-blend-luminosity"
+          src="/images/donation-volunteers.jpg"
+          width={1200}
+          height={800}
+        />
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-primary text-xs font-bold rounded-full mb-4 shadow-sm">
@@ -339,21 +403,21 @@ export const Home: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 text-[#1b1c1e]">
+          <div className="bg-white rounded-3xl shadow-2xl p-6 sm:p-8 md:p-12 text-[#1b1c1e]">
             <div className="flex flex-col gap-8">
               {/* Vodafone Cash */}
-              <div className="flex items-start gap-5">
-                <div className="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center shrink-0">
+              <div className="flex items-start gap-4 sm:gap-5">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-secondary-container flex items-center justify-center shrink-0">
                   <span className="material-symbols-outlined text-3xl text-warning" aria-hidden="true">
                     phone_iphone
                   </span>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="text-xl font-bold text-on-surface mb-1">فودافون كاش / محافظ إلكترونية</h3>
                   <p className="text-on-surface-variant text-sm mb-3">
                     يمكنك التبرع فوراً عبر محفظة فودافون كاش على الرقم المعتمد:
                   </p>
-                  <div className="bg-surface-container-low px-5 py-3 rounded-xl font-mono text-2xl font-bold text-primary inline-block border border-primary/10 tracking-wider" dir="ltr">
+                  <div className="bg-surface-container-low px-4 sm:px-5 py-3 rounded-xl font-mono text-xl sm:text-2xl font-bold text-primary inline-block border border-primary/10 tracking-wider" dir="ltr">
                     01003403147
                   </div>
                 </div>
@@ -362,13 +426,13 @@ export const Home: React.FC = () => {
               <div className="h-px bg-outline-variant/30 w-full" />
 
               {/* Bank Transfer */}
-              <div className="flex items-start gap-5">
-                <div className="w-14 h-14 rounded-2xl bg-primary-container flex items-center justify-center shrink-0">
+              <div className="flex items-start gap-4 sm:gap-5">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-primary-container flex items-center justify-center shrink-0">
                   <span className="material-symbols-outlined text-3xl text-primary">
                     account_balance
                   </span>
                 </div>
-                <div className="w-full">
+                <div className="w-full min-w-0">
                   <h3 className="text-xl font-bold text-on-surface mb-1">التحويل البنكي والزكاة</h3>
                   <p className="text-on-surface-variant text-sm mb-4">
                     حسابنا البنكي المعتمد لاستقبال التبرعات والصدقات والزكاة:

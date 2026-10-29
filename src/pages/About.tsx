@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SmartImage } from '../components/SmartImage';
 
 export const About: React.FC = () => {
   return (
@@ -58,13 +59,18 @@ export const About: React.FC = () => {
           </div>
 
           <div className="relative">
-            <div className="aspect-square bg-primary/10 rounded-full absolute -top-8 -right-8 w-64 h-64 -z-10 blur-xl" />
-            <div className="bg-gradient-to-tr from-primary/10 to-surface-container rounded-3xl overflow-hidden aspect-[4/3] border-8 border-white shadow-2xl relative flex items-center justify-center">
-              <span className="material-symbols-outlined text-[120px] text-primary/30">
-                diversity_3
-              </span>
-              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-md text-center border border-outline-variant/20">
-                <p className="font-bold text-primary font-headline text-xl">
+            <div className="aspect-square bg-primary/10 rounded-full absolute -top-8 -right-4 xl:-right-8 w-64 h-64 -z-10 blur-xl" />
+            <div className="bg-gradient-to-tr from-primary/10 to-surface-container rounded-3xl overflow-hidden aspect-square sm:aspect-[4/3] border-8 border-white shadow-2xl relative flex items-center justify-center">
+              <SmartImage
+                alt="طفل مبتسم وسط الحقول الخضراء في ريف مصر"
+                className="absolute inset-0 h-full w-full object-cover"
+                src="/images/egypt-countryside.jpg"
+                width={1200}
+                height={800}
+                fallbackIcon="diversity_3"
+              />
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 bg-white/95 backdrop-blur-md p-3 sm:p-5 rounded-2xl shadow-md text-center border border-outline-variant/20">
+                <p className="font-bold text-primary font-headline text-base sm:text-xl">
                   سنوات مستمرة من العطاء والتطوع الميداني
                 </p>
                 <p className="text-xs text-on-surface-variant mt-1">تغطية لكافة مراكز الفيوم: سنورس، إطسا، طامية، إبشواي، يوسف الصديق</p>

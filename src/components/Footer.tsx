@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-primary text-white pt-20 pb-8 mt-auto">
+    <footer className="bg-primary text-white pt-20 pb-24 lg:pb-8 mt-auto">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         
         {/* Branch Info & Logo */}
@@ -148,7 +148,7 @@ export const Footer: React.FC = () => {
             رقم القيد: <span className="text-white/60 font-mono">2150</span> لسنة 2018 — مديرية التضامن الاجتماعي الفيوم | النطاق: <span className="text-white/60 font-mono" dir="ltr">thefuture-makers.com</span>
           </p>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
           <Link to="/about#registration" className="hover:text-white underline">
             البيانات التسجيلية
           </Link>

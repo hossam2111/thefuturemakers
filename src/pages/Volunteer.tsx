@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SmartImage } from '../components/SmartImage';
 
 export const Volunteer: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -57,6 +58,16 @@ export const Volunteer: React.FC = () => {
     <div className="flex flex-col">
       {/* Hero */}
       <section className="bg-primary text-white py-16 lg:py-20 relative overflow-hidden">
+        <SmartImage
+          decorative
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+          src="/images/teamwork-hands.jpg"
+          width={1200}
+          height={800}
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/85 to-primary/95" aria-hidden="true" />
         <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <span className="text-sm font-bold bg-white/10 px-4 py-1.5 rounded-full inline-block mb-4 border border-white/20">
@@ -74,7 +85,7 @@ export const Volunteer: React.FC = () => {
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="px-8 py-4 bg-[#25d366] text-white hover:bg-[#20ba5a] rounded-2xl font-bold text-lg shadow-xl shadow-black/20 flex items-center gap-3 transition-transform hover:scale-105"
+              className="px-6 sm:px-8 py-4 bg-[#25d366] text-white hover:bg-[#20ba5a] rounded-2xl font-bold text-base sm:text-lg shadow-xl shadow-black/20 flex items-center gap-3 transition-transform hover:scale-105"
             >
               <svg aria-hidden="true" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M20.52 3.48A11.8 11.8 0 0 0 12.12 0C5.58 0 .26 5.32.26 11.86c0 2.09.55 4.13 1.6 5.93L.16 24l6.36-1.67a11.8 11.8 0 0 0 5.6 1.43h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.47-8.42ZM12.13 21.76h-.01a9.82 9.82 0 0 1-5.01-1.37l-.36-.22-3.77.99 1.01-3.68-.24-.38a9.83 9.83 0 0 1-1.5-5.23c0-5.43 4.42-9.85 9.86-9.85a9.8 9.8 0 0 1 6.96 2.88 9.8 9.8 0 0 1 2.89 6.97c0 5.43-4.42 9.85-9.84 9.85Zm5.4-7.37c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.15-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z"/>
@@ -88,7 +99,7 @@ export const Volunteer: React.FC = () => {
       {/* Main Registration Form */}
       <section className="py-20 bg-surface-container-lowest">
         <div className="max-w-3xl mx-auto px-6">
-          <div className="bg-white rounded-3xl p-8 sm:p-12 border border-outline-variant/30 shadow-xl">
+          <div className="bg-white rounded-3xl p-6 sm:p-12 border border-outline-variant/30 shadow-xl">
             {submitted ? (
               <div className="text-center py-10 space-y-6 animate-fade-in">
                 <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">

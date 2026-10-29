@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { SmartImage } from '../components/SmartImage';
 
 export const Services: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -16,6 +17,8 @@ export const Services: React.FC = () => {
     {
       category: 'economic',
       icon: 'storefront',
+      image: '/images/small-business-vendor.jpg',
+      imageAlt: 'بائع يدير مشروعه الصغير لبيع الفاكهة',
       title: 'تمويل المشروعات متناهية الصغر',
       desc: 'توفير التمويل والمعدات اللازمة لبدء مشروعات تجارية أو حرفية (أكشاك، ماكينات خياطة، ورش نجارة وحدادة) للأسر المنتجة بالفيوم.',
       target: 'الشباب والمرأة المعيلة',
@@ -23,6 +26,8 @@ export const Services: React.FC = () => {
     {
       category: 'economic',
       icon: 'psychology',
+      image: '/images/vocational-training.jpg',
+      imageAlt: 'متدرب يعمل على آلة نجارة في ورشة',
       title: 'التدريب المهني والحرفي',
       desc: 'دورات تدريبية متقدمة في الحرف اليدوية، التصنيع الغذائي، وصيانة الأجهزة لتمكين الشباب من دخول سوق العمل.',
       target: 'خريجو المؤهلات المتوسطة والباحثون عن عمل',
@@ -30,6 +35,8 @@ export const Services: React.FC = () => {
     {
       category: 'health',
       icon: 'medical_services',
+      image: '/images/medical-checkup.jpg',
+      imageAlt: 'طبيبة تفحص طفلاً رضيعاً بحضور والدته',
       title: 'القوافل الطبية والعلاج المجاني',
       desc: 'قوافل طبية تجوب قرى مراكز الفيوم (سنورس، إطسا، طامية، إبشواي) للكشف وصرف العلاج المجاني وإجراء الفحوصات والتحاليل.',
       target: 'أهالي القرى الأكثر احتياجاً',
@@ -37,6 +44,8 @@ export const Services: React.FC = () => {
     {
       category: 'health',
       icon: 'ecg',
+      image: '/images/medical-equipment.jpg',
+      imageAlt: 'جهاز قياس ضغط الدم على طاولة الكشف',
       title: 'كفالة العمليات الجراحية العاجلة',
       desc: 'التكفل بكامل تكاليف العمليات الجراحية الدقيقة وقوائم الانتظار بالتنسيق مع المستشفيات والمراكز التخصصية.',
       target: 'الحالات الحرجة وغير القادرين',
@@ -44,6 +53,8 @@ export const Services: React.FC = () => {
     {
       category: 'education',
       icon: 'school',
+      image: '/images/education-classroom.jpg',
+      imageAlt: 'معلمة مع تلاميذ داخل فصل دراسي',
       title: 'كفالة طالب العلم وسداد المصروفات',
       desc: 'سداد المصروفات المدرسية والجامعية للطلاب المتفوقين دراسياً من الأسر المتعثرة مادياً لضمان استمرار تعليمهم.',
       target: 'الطلاب الأيتام وغير القادرين',
@@ -51,6 +62,8 @@ export const Services: React.FC = () => {
     {
       category: 'education',
       icon: 'menu_book',
+      image: '/images/literacy-books.jpg',
+      imageAlt: 'فتيات يحملن الكتب الدراسية',
       title: 'مبادرة محو الأمية وتعليم الكبار',
       desc: 'فصول مسائية لتعليم القراءة والكتابة والحساب بشهادات معتمدة بالتعاون مع الهيئة العامة لتعليم الكبار بالفيوم.',
       target: 'كبار السن والراغبون في التعلم',
@@ -58,6 +71,8 @@ export const Services: React.FC = () => {
     {
       category: 'housing',
       icon: 'roofing',
+      image: '/images/housing-construction.jpg',
+      imageAlt: 'فريق من المتطوعين يبني سقف منزل',
       title: 'تسقيف المنازل وترميم الجدران',
       desc: 'بناء أسقف خشبية وخرسانية متينة وترميم الحوائط لمنازل الأسر المعرضة لمخاطر الأمطار والسيول بقرى الفيوم.',
       target: 'المنازل المتهالكة وغير الآمنة',
@@ -65,6 +80,8 @@ export const Services: React.FC = () => {
     {
       category: 'housing',
       icon: 'water_drop',
+      image: '/images/clean-water.jpg',
+      imageAlt: 'يدان تتلقيان مياه شرب نظيفة',
       title: 'توصيل مياه الشرب النظيفة',
       desc: 'مد شبكات وعدادات مياه الشرب النقية للمنازل المحرومة لضمان بيئة صحية وكريمة للأطفال والأسر.',
       target: 'الأسر غير القادرة على رسوم التوصيل',
@@ -120,10 +137,19 @@ export const Services: React.FC = () => {
             {filteredServices.map((srv, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-3xl p-8 border border-outline-variant/30 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
+                className="bg-white rounded-3xl border border-outline-variant/30 shadow-sm hover:shadow-xl transition-all flex flex-col overflow-hidden"
               >
+                <SmartImage
+                  alt={srv.imageAlt}
+                  className="h-44 w-full object-cover"
+                  src={srv.image}
+                  width={1200}
+                  height={800}
+                  fallbackIcon={srv.icon}
+                />
+                <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-primary-container text-primary flex items-center justify-center mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-primary-container text-primary flex items-center justify-center -mt-14 sm:-mt-16 mb-6 ring-4 ring-white">
                     <span className="material-symbols-outlined text-3xl">{srv.icon}</span>
                   </div>
                   <h3 className="text-xl font-bold font-headline mb-3 text-on-surface">
@@ -134,17 +160,18 @@ export const Services: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-outline-variant/20 flex items-center justify-between">
-                  <div className="flex flex-col">
+                <div className="pt-4 border-t border-outline-variant/20 flex items-center justify-between gap-3">
+                  <div className="flex flex-col min-w-0">
                     <span className="text-[10px] text-on-surface-variant font-bold">الفئة المستهدفة</span>
                     <span className="text-xs font-bold text-secondary">{srv.target}</span>
                   </div>
                   <Link
                     to="/request-aid"
-                    className="px-4 py-2 bg-primary/10 hover:bg-primary text-primary hover:text-white rounded-xl text-xs font-bold transition-colors"
+                    className="px-4 py-2.5 bg-primary/10 hover:bg-primary text-primary hover:text-white rounded-xl text-xs font-bold transition-colors shrink-0 whitespace-nowrap"
                   >
                     تقديم طلب
                   </Link>
+                </div>
                 </div>
               </div>
             ))}

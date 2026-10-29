@@ -67,7 +67,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-on-surface mb-1">الخط الساخن والواتساب</h3>
-                  <p className="text-sm text-on-surface-variant mb-1 font-mono" dir="ltr">01026236435</p>
+                  <p className="text-sm text-on-surface-variant mb-1 font-mono" dir="ltr">01003403147</p>
                   <p className="text-xs text-on-surface-variant font-mono" dir="ltr">01020040935</p>
                 </div>
               </div>
@@ -104,7 +104,7 @@ export const Contact: React.FC = () => {
                 يمكنك التحدث مع مسؤولي خدمة الجمهور بالفرع عبر واتساب مباشرة للرد على الاستفسارات العاجلة.
               </p>
               <a
-                href="https://wa.me/201026236435"
+                href="https://wa.me/201003403147"
                 target="_blank"
                 rel="noreferrer"
                 className="w-full py-3.5 bg-white text-primary hover:bg-white/90 rounded-xl font-bold flex items-center justify-center gap-2 shadow-md transition-colors"

@@ -354,7 +354,7 @@ export const Home: React.FC = () => {
                     يمكنك التبرع فوراً عبر محفظة فودافون كاش على الرقم المعتمد:
                   </p>
                   <div className="bg-surface-container-low px-5 py-3 rounded-xl font-mono text-2xl font-bold text-primary inline-block border border-primary/10 tracking-wider" dir="ltr">
-                    01026236435
+                    01003403147
                   </div>
                 </div>
               </div>

@@ -102,8 +102,8 @@ export const Footer: React.FC = () => {
               <span className="material-symbols-outlined text-secondary">
                 call
               </span>
-              <a href="https://wa.me/201026236435" target="_blank" rel="noreferrer" className="hover:text-white hover:underline font-mono" dir="ltr">
-                01026236435
+              <a href="https://wa.me/201003403147" target="_blank" rel="noreferrer" className="hover:text-white hover:underline font-mono" dir="ltr">
+                01003403147
               </a>
             </li>
             <li className="flex items-center gap-3">

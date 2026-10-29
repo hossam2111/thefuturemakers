@@ -18,7 +18,7 @@ export const FloatingActions: React.FC = () => {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/201026236435"
+        href="https://wa.me/201003403147"
         target="_blank"
         rel="noreferrer"
         aria-label="تواصل معنا عبر واتساب"

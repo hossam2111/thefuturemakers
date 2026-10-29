@@ -62,7 +62,7 @@ export const About: React.FC = () => {
             <div className="aspect-square bg-primary/10 rounded-full absolute -top-8 -right-4 xl:-right-8 w-64 h-64 -z-10 blur-xl" />
             <div className="bg-gradient-to-tr from-primary/10 to-surface-container rounded-3xl overflow-hidden aspect-square sm:aspect-[4/3] border-8 border-white shadow-2xl relative flex items-center justify-center">
               <SmartImage
-                alt="طفل مبتسم وسط الحقول الخضراء في ريف مصر"
+                alt="فلاح وسط الحقول والنخيل في الفيوم"
                 className="absolute inset-0 h-full w-full object-cover"
                 src="/images/egypt-countryside.jpg"
                 width={1200}
@@ -156,15 +156,15 @@ export const About: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-xs text-on-surface-variant uppercase tracking-widest mb-1 font-bold">رقم القيد</p>
-                    <p className="font-bold text-primary text-3xl font-mono">2150</p>
+                    <p className="font-bold text-primary text-xl">قيد الاستكمال</p>
                   </div>
                   <div>
                     <p className="text-xs text-on-surface-variant uppercase tracking-widest mb-1 font-bold">سنة القيد</p>
-                    <p className="font-bold text-on-surface text-xl">2018</p>
+                    <p className="font-bold text-on-surface text-xl">قيد الاستكمال</p>
                   </div>
                   <div>
                     <p className="text-xs text-on-surface-variant uppercase tracking-widest mb-1 font-bold">تاريخ الإشهار</p>
-                    <p className="font-bold text-on-surface font-mono" dir="ltr">15 / 03 / 2018</p>
+                    <p className="font-bold text-on-surface">قيد الاستكمال</p>
                   </div>
                 </div>
 
@@ -175,11 +175,11 @@ export const About: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-xs text-on-surface-variant uppercase tracking-widest mb-1 font-bold">كود النشاط الضريبي</p>
-                    <p className="font-bold text-on-surface font-mono">9609</p>
+                    <p className="font-bold text-on-surface">قيد الاستكمال</p>
                   </div>
                   <div>
                     <p className="text-xs text-on-surface-variant uppercase tracking-widest mb-1 font-bold">الرقم الضريبي</p>
-                    <p className="font-bold text-on-surface font-mono" dir="ltr">266-144-626-765-492</p>
+                    <p className="font-bold text-on-surface">قيد الاستكمال</p>
                   </div>
                   <div>
                     <p className="text-xs text-on-surface-variant uppercase tracking-widest mb-1 font-bold">الموقع الرسمي والنطاق</p>

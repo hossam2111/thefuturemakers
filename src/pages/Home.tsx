@@ -83,7 +83,7 @@ export const Home: React.FC = () => {
           {/* Hero Visual Card */}
           <div className="relative h-[380px] lg:h-[540px] rounded-3xl overflow-hidden border border-secondary/30 shadow-2xl shadow-primary/20 group">
             <SmartImage
-              alt="متطوعون يجهزون المساعدات تحت خيمة ميدانية"
+              alt="فلاح وابنه يجمعان العلف في حقول الفيوم"
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               src="/images/hero-volunteers.jpg"
               width={1000}
@@ -216,7 +216,7 @@ export const Home: React.FC = () => {
             {/* Economic Empowerment (Span 2) */}
             <div className="lg:col-span-2 relative rounded-3xl overflow-hidden group min-h-[320px]">
               <SmartImage
-                alt="بائع يدير مشروعه الصغير لبيع الفاكهة"
+                alt="بائعان أمام محل خضروات وفاكهة في الغردقة"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 src="/images/small-business-vendor.jpg"
                 width={800}
@@ -238,7 +238,7 @@ export const Home: React.FC = () => {
             {/* Educational Support */}
             <div className="bg-white rounded-3xl border border-outline-variant/30 hover:shadow-xl transition-shadow flex flex-col min-h-[320px] overflow-hidden">
               <SmartImage
-                alt="معلمة مع تلاميذ داخل فصل دراسي"
+                alt="مقاعد خشبية داخل فصل دراسي في القاهرة"
                 className="h-40 w-full object-cover"
                 src="/images/education-classroom.jpg"
                 width={1200}
@@ -259,7 +259,7 @@ export const Home: React.FC = () => {
             {/* Health Interventions */}
             <div className="bg-white rounded-3xl border border-outline-variant/30 hover:shadow-xl transition-shadow flex flex-col min-h-[320px] overflow-hidden">
               <SmartImage
-                alt="طبيبة تفحص طفلاً رضيعاً بحضور والدته"
+                alt="طبيب عربي يرتدي المعطف الأبيض داخل منشأة طبية"
                 className="h-40 w-full object-cover"
                 src="/images/medical-checkup.jpg"
                 width={1200}
@@ -280,7 +280,7 @@ export const Home: React.FC = () => {
             {/* Decent Housing (Span 2) */}
             <div className="bg-white rounded-3xl border border-outline-variant/30 hover:shadow-xl transition-shadow flex flex-col min-h-[300px] lg:col-span-2 overflow-hidden">
               <SmartImage
-                alt="فريق من المتطوعين يبني سقف منزل"
+                alt="منزل ريفي وسط الحقول والنخيل في مصر"
                 className="h-40 w-full object-cover"
                 src="/images/housing-construction.jpg"
                 width={1200}
@@ -315,7 +315,7 @@ export const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="rounded-3xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-all">
               <SmartImage
-                alt="طفلة تتلقى الرعاية الطبية خلال قافلة طبية"
+                alt="سماعة طبية ومعطف أبيض دون ظهور وجوه المرضى"
                 className="h-48 w-full object-cover"
                 src="/images/medical-convoy-child.jpg"
                 width={1200}
@@ -336,7 +336,7 @@ export const Home: React.FC = () => {
 
             <div className="rounded-3xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-all">
               <SmartImage
-                alt="سيدة تعمل على ماكينة خياطة في مشروعها الخاص"
+                alt="يدا حرفي تعملان على نول خشبي في مصر"
                 className="h-48 w-full object-cover"
                 src="/images/sewing-workshop.jpg"
                 width={1200}
@@ -357,7 +357,7 @@ export const Home: React.FC = () => {
 
             <div className="rounded-3xl border border-outline-variant/30 overflow-hidden shadow-sm hover:shadow-md transition-all">
               <SmartImage
-                alt="حلقة تدريبية لفرق التطوع في الهواء الطلق"
+                alt="قارئ بين رفوف الكتب في مكتبة بالقاهرة"
                 className="h-48 w-full object-cover"
                 src="/images/volunteer-training.jpg"
                 width={1200}

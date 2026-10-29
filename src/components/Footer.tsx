@@ -145,7 +145,7 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col items-center md:items-start gap-1">
           <p>© {new Date().getFullYear()} جمعية صناع المستقبل للتنمية بالفيوم. جميع الحقوق محفوظة.</p>
           <p className="text-white/40">
-            رقم القيد: <span className="text-white/60 font-mono">2150</span> لسنة 2018 — مديرية التضامن الاجتماعي الفيوم | النطاق: <span className="text-white/60 font-mono" dir="ltr">thefuture-makers.com</span>
+            مديرية التضامن الاجتماعي الفيوم | النطاق: <span className="text-white/60 font-mono" dir="ltr">thefuture-makers.com</span>
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
